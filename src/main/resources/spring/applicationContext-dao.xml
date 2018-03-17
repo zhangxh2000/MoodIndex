@@ -39,5 +39,11 @@
         <property name="basePackage" value="com.wy.moodindex.dao"/>
        
     </bean>
+
+    <!--执行初始化任务的bean-->
+    <bean class="com.wy.moodindex.model.DataEngine">
+    </bean>
+    <bean class ="com.wy.moodindex.StartUp">
+    </bean>
 	
 </beans>

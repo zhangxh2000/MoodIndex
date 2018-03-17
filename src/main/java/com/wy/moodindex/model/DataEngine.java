@@ -12,16 +12,14 @@ import org.springframework.beans.factory.annotation.Autowired;
  * 从雪球抓取数据、提取数据、保存数据到数据库
  */
 public class DataEngine {
-    private static DataEngine instance = new DataEngine();
+    //private static DataEngine instance = new DataEngine();
 
-    public static DataEngine getInstance() {
-        return instance;
-    }
-    private DataEngine() {
-    }
+    //public static DataEngine getInstance() {
+    //    return instance;
+    //}
+//    private DataEngine() {
+//    }
 
-    @Autowired
-    private Stock stock;
     @Autowired
     private StockMapper stockMapper;
 
@@ -36,9 +34,9 @@ public class DataEngine {
             return;
         }
         IGrab grabController = new PostGrabber(authResult);
-        stock = stockMapper.selectByPrimaryKey("SH600016");
-        System.out.println(stock.getName());
-        //grabController.grabData("SH600016",1);
+        Stock stock = stockMapper.selectByPrimaryKey("SH600016");
+        String temp = grabController.grabData(stock.getId(),1);
+        System.out.println(temp);
 
     }
 

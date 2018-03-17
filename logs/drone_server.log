@@ -1,0 +1,338 @@
+2018-03-17 16:15:02.683 [localhost-startStop-1] INFO  com.wy.moodindex.model.source.OAuthController - {"access_token":"9bbf91d9ce487259256b9decd43972e247b14b69","refresh_token":"9ac4584c7b159602c9a9c0cc2ca9c43ff36846b0","uid":1629212250,"is_new":false,"scope":"all","darkness":0,"expires_in":9719,"user":{"id":1629212250,"screen_name":null,"name":null,"province":null,"city":null,"location":null,"description":null,"url":null,"domain":null,"gender":null,"verified":null,"created_at":1519265700652,"areaCode":null,"type":"5","followers_count":null,"friends_count":null,"status_count":null,"last_status_id":null,"last_comment_id":null,"step":"null","verified_description":null,"blog_description":null,"profile":"/1629212250","recommend":null,"stock_status_count":null,"intro":null,"status":0,"st_color":"1","following":false,"follow_me":false,"blocking":false,"allow_all_stock":false,"truncated":false,"stocks_count":null,"verified_type":null,"ability":null,"donate_snowcoin":0,"donate_count":0,"anonymous":true,"maskedEmail":null,"photo_domain":"http://xavatar.imedao.com/","cube_count":null,"profile_image_url":"community/default/avatar.png,community/default/avatar.png!180x180.png,community/default/avatar.png!50x50.png,community/default/avatar.png!30x30.png"}}
+2018-03-17 16:15:03.058 [localhost-startStop-1] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2018-03-17 16:15:04.173 [Druid-ConnectionPool-Create-163422954] ERROR com.alibaba.druid.pool.DruidDataSource - create connection error, url: jdbc:mysql://127.0.0.1:3306/mood_index?characterEncoding=utf-8, errorCode 0, state 08S01
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:1.8.0_91]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[?:1.8.0_91]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:1.8.0_91]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423) ~[?:1.8.0_91]
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1036) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:338) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2232) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2265) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2064) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:790) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:1.8.0_91]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[?:1.8.0_91]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:1.8.0_91]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423) ~[?:1.8.0_91]
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:395) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:325) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1421) ~[druid-1.0.23.jar:1.0.23]
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1477) ~[druid-1.0.23.jar:1.0.23]
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2001) [druid-1.0.23.jar:1.0.23]
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method) ~[?:1.8.0_91]
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79) ~[?:1.8.0_91]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[?:1.8.0_91]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[?:1.8.0_91]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[?:1.8.0_91]
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172) ~[?:1.8.0_91]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[?:1.8.0_91]
+	at java.net.Socket.connect(Socket.java:589) ~[?:1.8.0_91]
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:213) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:297) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	... 15 more
+2018-03-17 16:15:05.181 [Druid-ConnectionPool-Create-163422954] ERROR com.alibaba.druid.pool.DruidDataSource - create connection error, url: jdbc:mysql://127.0.0.1:3306/mood_index?characterEncoding=utf-8, errorCode 0, state 08S01
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:1.8.0_91]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[?:1.8.0_91]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:1.8.0_91]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423) ~[?:1.8.0_91]
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1036) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:338) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2232) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2265) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2064) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:790) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:1.8.0_91]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[?:1.8.0_91]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:1.8.0_91]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423) ~[?:1.8.0_91]
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:395) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:325) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1421) ~[druid-1.0.23.jar:1.0.23]
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1477) ~[druid-1.0.23.jar:1.0.23]
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2001) [druid-1.0.23.jar:1.0.23]
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method) ~[?:1.8.0_91]
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79) ~[?:1.8.0_91]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[?:1.8.0_91]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[?:1.8.0_91]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[?:1.8.0_91]
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172) ~[?:1.8.0_91]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[?:1.8.0_91]
+	at java.net.Socket.connect(Socket.java:589) ~[?:1.8.0_91]
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:213) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:297) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	... 15 more
+2018-03-17 16:15:06.185 [Druid-ConnectionPool-Create-163422954] ERROR com.alibaba.druid.pool.DruidDataSource - create connection error, url: jdbc:mysql://127.0.0.1:3306/mood_index?characterEncoding=utf-8, errorCode 0, state 08S01
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:1.8.0_91]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[?:1.8.0_91]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:1.8.0_91]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423) ~[?:1.8.0_91]
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1036) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:338) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2232) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2265) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2064) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:790) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:1.8.0_91]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[?:1.8.0_91]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:1.8.0_91]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423) ~[?:1.8.0_91]
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:395) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:325) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1421) ~[druid-1.0.23.jar:1.0.23]
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1477) ~[druid-1.0.23.jar:1.0.23]
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2001) [druid-1.0.23.jar:1.0.23]
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method) ~[?:1.8.0_91]
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79) ~[?:1.8.0_91]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[?:1.8.0_91]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[?:1.8.0_91]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[?:1.8.0_91]
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172) ~[?:1.8.0_91]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[?:1.8.0_91]
+	at java.net.Socket.connect(Socket.java:589) ~[?:1.8.0_91]
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:213) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:297) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	... 15 more
+2018-03-17 16:15:07.187 [Druid-ConnectionPool-Create-163422954] ERROR com.alibaba.druid.pool.DruidDataSource - create connection error, url: jdbc:mysql://127.0.0.1:3306/mood_index?characterEncoding=utf-8, errorCode 0, state 08S01
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:1.8.0_91]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[?:1.8.0_91]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:1.8.0_91]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423) ~[?:1.8.0_91]
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1036) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:338) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2232) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2265) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2064) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:790) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:1.8.0_91]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[?:1.8.0_91]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:1.8.0_91]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423) ~[?:1.8.0_91]
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:395) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:325) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1421) ~[druid-1.0.23.jar:1.0.23]
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1477) ~[druid-1.0.23.jar:1.0.23]
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2001) [druid-1.0.23.jar:1.0.23]
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method) ~[?:1.8.0_91]
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79) ~[?:1.8.0_91]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[?:1.8.0_91]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[?:1.8.0_91]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[?:1.8.0_91]
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172) ~[?:1.8.0_91]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[?:1.8.0_91]
+	at java.net.Socket.connect(Socket.java:589) ~[?:1.8.0_91]
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:213) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:297) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	... 15 more
+2018-03-17 16:15:08.192 [Druid-ConnectionPool-Create-163422954] ERROR com.alibaba.druid.pool.DruidDataSource - create connection error, url: jdbc:mysql://127.0.0.1:3306/mood_index?characterEncoding=utf-8, errorCode 0, state 08S01
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:1.8.0_91]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[?:1.8.0_91]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:1.8.0_91]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423) ~[?:1.8.0_91]
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1036) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:338) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2232) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2265) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2064) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:790) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:1.8.0_91]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[?:1.8.0_91]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:1.8.0_91]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423) ~[?:1.8.0_91]
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:395) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:325) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1421) ~[druid-1.0.23.jar:1.0.23]
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1477) ~[druid-1.0.23.jar:1.0.23]
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2001) [druid-1.0.23.jar:1.0.23]
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method) ~[?:1.8.0_91]
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79) ~[?:1.8.0_91]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[?:1.8.0_91]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[?:1.8.0_91]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[?:1.8.0_91]
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172) ~[?:1.8.0_91]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[?:1.8.0_91]
+	at java.net.Socket.connect(Socket.java:589) ~[?:1.8.0_91]
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:213) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:297) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	... 15 more
+2018-03-17 16:15:09.195 [Druid-ConnectionPool-Create-163422954] ERROR com.alibaba.druid.pool.DruidDataSource - create connection error, url: jdbc:mysql://127.0.0.1:3306/mood_index?characterEncoding=utf-8, errorCode 0, state 08S01
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:1.8.0_91]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[?:1.8.0_91]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:1.8.0_91]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423) ~[?:1.8.0_91]
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1036) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:338) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2232) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2265) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2064) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:790) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:1.8.0_91]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[?:1.8.0_91]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:1.8.0_91]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423) ~[?:1.8.0_91]
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:395) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:325) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1421) ~[druid-1.0.23.jar:1.0.23]
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1477) ~[druid-1.0.23.jar:1.0.23]
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2001) [druid-1.0.23.jar:1.0.23]
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method) ~[?:1.8.0_91]
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79) ~[?:1.8.0_91]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[?:1.8.0_91]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[?:1.8.0_91]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[?:1.8.0_91]
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172) ~[?:1.8.0_91]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[?:1.8.0_91]
+	at java.net.Socket.connect(Socket.java:589) ~[?:1.8.0_91]
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:213) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:297) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	... 15 more
+2018-03-17 16:15:10.201 [Druid-ConnectionPool-Create-163422954] ERROR com.alibaba.druid.pool.DruidDataSource - create connection error, url: jdbc:mysql://127.0.0.1:3306/mood_index?characterEncoding=utf-8, errorCode 0, state 08S01
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:1.8.0_91]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[?:1.8.0_91]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:1.8.0_91]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423) ~[?:1.8.0_91]
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1036) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:338) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2232) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2265) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2064) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:790) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:1.8.0_91]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[?:1.8.0_91]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:1.8.0_91]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423) ~[?:1.8.0_91]
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:395) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:325) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1421) ~[druid-1.0.23.jar:1.0.23]
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1477) ~[druid-1.0.23.jar:1.0.23]
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2001) [druid-1.0.23.jar:1.0.23]
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method) ~[?:1.8.0_91]
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79) ~[?:1.8.0_91]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[?:1.8.0_91]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[?:1.8.0_91]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[?:1.8.0_91]
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172) ~[?:1.8.0_91]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[?:1.8.0_91]
+	at java.net.Socket.connect(Socket.java:589) ~[?:1.8.0_91]
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:213) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:297) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	... 15 more
+2018-03-17 16:15:11.204 [Druid-ConnectionPool-Create-163422954] ERROR com.alibaba.druid.pool.DruidDataSource - create connection error, url: jdbc:mysql://127.0.0.1:3306/mood_index?characterEncoding=utf-8, errorCode 0, state 08S01
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:1.8.0_91]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[?:1.8.0_91]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:1.8.0_91]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423) ~[?:1.8.0_91]
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1036) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:338) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2232) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2265) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2064) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:790) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:1.8.0_91]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[?:1.8.0_91]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:1.8.0_91]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423) ~[?:1.8.0_91]
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:377) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:395) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:325) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1421) ~[druid-1.0.23.jar:1.0.23]
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1477) ~[druid-1.0.23.jar:1.0.23]
+	at com.alibaba.druid.pool.DruidDataSource$CreateConnectionThread.run(DruidDataSource.java:2001) [druid-1.0.23.jar:1.0.23]
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method) ~[?:1.8.0_91]
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79) ~[?:1.8.0_91]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[?:1.8.0_91]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[?:1.8.0_91]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[?:1.8.0_91]
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172) ~[?:1.8.0_91]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[?:1.8.0_91]
+	at java.net.Socket.connect(Socket.java:589) ~[?:1.8.0_91]
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:213) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:297) ~[mysql-connector-java-5.1.34.jar:5.1.34]
+	... 15 more
+2018-03-17 16:34:48.685 [localhost-startStop-1] INFO  com.wy.moodindex.model.source.OAuthController - {"access_token":"9bbf91d9ce487259256b9decd43972e247b14b69","refresh_token":"9ac4584c7b159602c9a9c0cc2ca9c43ff36846b0","uid":1629212250,"is_new":false,"scope":"all","darkness":0,"expires_in":9700,"user":{"id":1629212250,"screen_name":null,"name":null,"province":null,"city":null,"location":null,"description":null,"url":null,"domain":null,"gender":null,"verified":null,"created_at":1519265700652,"areaCode":null,"type":"5","followers_count":null,"friends_count":null,"status_count":null,"last_status_id":null,"last_comment_id":null,"step":"null","verified_description":null,"blog_description":null,"profile":"/1629212250","recommend":null,"stock_status_count":null,"intro":null,"status":0,"st_color":"1","following":false,"follow_me":false,"blocking":false,"allow_all_stock":false,"truncated":false,"stocks_count":null,"verified_type":null,"ability":null,"donate_snowcoin":0,"donate_count":0,"anonymous":true,"maskedEmail":null,"photo_domain":"http://xavatar.imedao.com/","cube_count":null,"profile_image_url":"community/default/avatar.png,community/default/avatar.png!180x180.png,community/default/avatar.png!50x50.png,community/default/avatar.png!30x30.png"}}
+2018-03-17 16:34:48.814 [localhost-startStop-1] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2018-03-17 16:34:49.868 [localhost-startStop-1] INFO  com.wy.moodindex.model.source.OAuthController - {"access_token":"9bbf91d9ce487259256b9decd43972e247b14b69","refresh_token":"9ac4584c7b159602c9a9c0cc2ca9c43ff36846b0","uid":1629212250,"is_new":false,"scope":"all","darkness":0,"expires_in":9700,"user":{"id":1629212250,"screen_name":null,"name":null,"province":null,"city":null,"location":null,"description":null,"url":null,"domain":null,"gender":null,"verified":null,"created_at":1519265700652,"areaCode":null,"type":"5","followers_count":null,"friends_count":null,"status_count":null,"last_status_id":null,"last_comment_id":null,"step":"null","verified_description":null,"blog_description":null,"profile":"/1629212250","recommend":null,"stock_status_count":null,"intro":null,"status":0,"st_color":"1","following":false,"follow_me":false,"blocking":false,"allow_all_stock":false,"truncated":false,"stocks_count":null,"verified_type":null,"ability":null,"donate_snowcoin":0,"donate_count":0,"anonymous":true,"maskedEmail":null,"photo_domain":"http://xavatar.imedao.com/","cube_count":null,"profile_image_url":"community/default/avatar.png,community/default/avatar.png!180x180.png,community/default/avatar.png!50x50.png,community/default/avatar.png!30x30.png"}}
+2018-03-17 16:37:50.512 [localhost-startStop-1] INFO  com.wy.moodindex.model.source.OAuthController - {"access_token":"9bbf91d9ce487259256b9decd43972e247b14b69","refresh_token":"9ac4584c7b159602c9a9c0cc2ca9c43ff36846b0","uid":1629212250,"is_new":false,"scope":"all","darkness":0,"expires_in":9697,"user":{"id":1629212250,"screen_name":null,"name":null,"province":null,"city":null,"location":null,"description":null,"url":null,"domain":null,"gender":null,"verified":null,"created_at":1519265700652,"areaCode":null,"type":"5","followers_count":null,"friends_count":null,"status_count":null,"last_status_id":null,"last_comment_id":null,"step":"null","verified_description":null,"blog_description":null,"profile":"/1629212250","recommend":null,"stock_status_count":null,"intro":null,"status":0,"st_color":"1","following":false,"follow_me":false,"blocking":false,"allow_all_stock":false,"truncated":false,"stocks_count":null,"verified_type":null,"ability":null,"donate_snowcoin":0,"donate_count":0,"anonymous":true,"maskedEmail":null,"photo_domain":"http://xavatar.imedao.com/","cube_count":null,"profile_image_url":"community/default/avatar.png,community/default/avatar.png!180x180.png,community/default/avatar.png!50x50.png,community/default/avatar.png!30x30.png"}}
+2018-03-17 16:37:50.831 [localhost-startStop-1] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2018-03-17 16:37:51.863 [localhost-startStop-1] INFO  com.wy.moodindex.model.source.OAuthController - {"access_token":"9bbf91d9ce487259256b9decd43972e247b14b69","refresh_token":"9ac4584c7b159602c9a9c0cc2ca9c43ff36846b0","uid":1629212250,"is_new":false,"scope":"all","darkness":0,"expires_in":9697,"user":{"id":1629212250,"screen_name":null,"name":null,"province":null,"city":null,"location":null,"description":null,"url":null,"domain":null,"gender":null,"verified":null,"created_at":1519265700652,"areaCode":null,"type":"5","followers_count":null,"friends_count":null,"status_count":null,"last_status_id":null,"last_comment_id":null,"step":"null","verified_description":null,"blog_description":null,"profile":"/1629212250","recommend":null,"stock_status_count":null,"intro":null,"status":0,"st_color":"1","following":false,"follow_me":false,"blocking":false,"allow_all_stock":false,"truncated":false,"stocks_count":null,"verified_type":null,"ability":null,"donate_snowcoin":0,"donate_count":0,"anonymous":true,"maskedEmail":null,"profile_image_url":"community/default/avatar.png,community/default/avatar.png!180x180.png,community/default/avatar.png!50x50.png,community/default/avatar.png!30x30.png","photo_domain":"http://xavatar.imedao.com/","cube_count":null}}
+2018-03-17 16:38:48.351 [localhost-startStop-1] INFO  com.wy.moodindex.model.source.OAuthController - {"access_token":"9bbf91d9ce487259256b9decd43972e247b14b69","refresh_token":"9ac4584c7b159602c9a9c0cc2ca9c43ff36846b0","uid":1629212250,"is_new":false,"scope":"all","darkness":0,"expires_in":9696,"user":{"id":1629212250,"screen_name":null,"name":null,"province":null,"city":null,"location":null,"description":null,"url":null,"domain":null,"gender":null,"verified":null,"created_at":1519265700652,"areaCode":null,"type":"5","followers_count":null,"friends_count":null,"status_count":null,"last_status_id":null,"last_comment_id":null,"step":"null","verified_description":null,"blog_description":null,"profile":"/1629212250","recommend":null,"stock_status_count":null,"intro":null,"status":0,"st_color":"1","following":false,"follow_me":false,"blocking":false,"allow_all_stock":false,"truncated":false,"stocks_count":null,"verified_type":null,"ability":null,"donate_snowcoin":0,"donate_count":0,"anonymous":true,"maskedEmail":null,"photo_domain":"http://xavatar.imedao.com/","cube_count":null,"profile_image_url":"community/default/avatar.png,community/default/avatar.png!180x180.png,community/default/avatar.png!50x50.png,community/default/avatar.png!30x30.png"}}
+2018-03-17 16:38:48.491 [localhost-startStop-1] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2018-03-17 16:38:49.859 [localhost-startStop-1] INFO  com.wy.moodindex.model.source.OAuthController - {"access_token":"9bbf91d9ce487259256b9decd43972e247b14b69","refresh_token":"9ac4584c7b159602c9a9c0cc2ca9c43ff36846b0","uid":1629212250,"is_new":false,"scope":"all","darkness":0,"expires_in":9696,"user":{"id":1629212250,"screen_name":null,"name":null,"province":null,"city":null,"location":null,"description":null,"url":null,"domain":null,"gender":null,"verified":null,"created_at":1519265700652,"areaCode":null,"type":"5","followers_count":null,"friends_count":null,"status_count":null,"last_status_id":null,"last_comment_id":null,"step":"null","verified_description":null,"blog_description":null,"profile":"/1629212250","recommend":null,"stock_status_count":null,"intro":null,"status":0,"st_color":"1","following":false,"follow_me":false,"blocking":false,"allow_all_stock":false,"truncated":false,"stocks_count":null,"verified_type":null,"ability":null,"donate_snowcoin":0,"donate_count":0,"maskedEmail":null,"anonymous":true,"photo_domain":"http://xavatar.imedao.com/","profile_image_url":"community/default/avatar.png,community/default/avatar.png!180x180.png,community/default/avatar.png!50x50.png,community/default/avatar.png!30x30.png","cube_count":null}}
+2018-03-17 16:41:13.930 [localhost-startStop-1] INFO  com.wy.moodindex.model.source.OAuthController - {"access_token":"9bbf91d9ce487259256b9decd43972e247b14b69","refresh_token":"9ac4584c7b159602c9a9c0cc2ca9c43ff36846b0","uid":1629212250,"is_new":false,"scope":"all","darkness":0,"expires_in":9693,"user":{"id":1629212250,"screen_name":null,"name":null,"province":null,"city":null,"location":null,"description":null,"url":null,"domain":null,"gender":null,"verified":null,"created_at":1519265700652,"areaCode":null,"type":"5","followers_count":null,"friends_count":null,"status_count":null,"last_status_id":null,"last_comment_id":null,"step":"null","verified_description":null,"blog_description":null,"profile":"/1629212250","recommend":null,"stock_status_count":null,"intro":null,"status":0,"st_color":"1","following":false,"follow_me":false,"blocking":false,"allow_all_stock":false,"truncated":false,"stocks_count":null,"verified_type":null,"ability":null,"donate_snowcoin":0,"donate_count":0,"anonymous":true,"maskedEmail":null,"profile_image_url":"community/default/avatar.png,community/default/avatar.png!180x180.png,community/default/avatar.png!50x50.png,community/default/avatar.png!30x30.png","photo_domain":"http://xavatar.imedao.com/","cube_count":null}}
+2018-03-17 16:41:14.067 [localhost-startStop-1] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2018-03-17 16:41:15.235 [localhost-startStop-1] INFO  com.wy.moodindex.model.source.OAuthController - {"access_token":"9bbf91d9ce487259256b9decd43972e247b14b69","refresh_token":"9ac4584c7b159602c9a9c0cc2ca9c43ff36846b0","uid":1629212250,"is_new":false,"scope":"all","darkness":0,"expires_in":9693,"user":{"id":1629212250,"screen_name":null,"name":null,"province":null,"city":null,"location":null,"description":null,"url":null,"domain":null,"gender":null,"verified":null,"created_at":1519265700652,"areaCode":null,"type":"5","followers_count":null,"friends_count":null,"status_count":null,"last_status_id":null,"last_comment_id":null,"step":"null","verified_description":null,"blog_description":null,"profile":"/1629212250","recommend":null,"stock_status_count":null,"intro":null,"status":0,"st_color":"1","following":false,"follow_me":false,"blocking":false,"allow_all_stock":false,"truncated":false,"stocks_count":null,"verified_type":null,"ability":null,"donate_snowcoin":0,"donate_count":0,"maskedEmail":null,"anonymous":true,"photo_domain":"http://xavatar.imedao.com/","cube_count":null,"profile_image_url":"community/default/avatar.png,community/default/avatar.png!180x180.png,community/default/avatar.png!50x50.png,community/default/avatar.png!30x30.png"}}
+2018-03-17 16:42:19.480 [localhost-startStop-1] INFO  com.wy.moodindex.model.source.OAuthController - {"access_token":"9bbf91d9ce487259256b9decd43972e247b14b69","refresh_token":"9ac4584c7b159602c9a9c0cc2ca9c43ff36846b0","uid":1629212250,"is_new":false,"scope":"all","darkness":0,"expires_in":9692,"user":{"id":1629212250,"screen_name":null,"name":null,"province":null,"city":null,"location":null,"description":null,"url":null,"domain":null,"gender":null,"verified":null,"created_at":1519265700652,"areaCode":null,"type":"5","followers_count":null,"friends_count":null,"status_count":null,"last_status_id":null,"last_comment_id":null,"step":"null","verified_description":null,"blog_description":null,"profile":"/1629212250","recommend":null,"stock_status_count":null,"intro":null,"status":0,"st_color":"1","following":false,"follow_me":false,"blocking":false,"allow_all_stock":false,"truncated":false,"stocks_count":null,"verified_type":null,"ability":null,"donate_snowcoin":0,"donate_count":0,"anonymous":true,"maskedEmail":null,"cube_count":null,"profile_image_url":"community/default/avatar.png,community/default/avatar.png!180x180.png,community/default/avatar.png!50x50.png,community/default/avatar.png!30x30.png","photo_domain":"http://xavatar.imedao.com/"}}
+2018-03-17 16:42:19.814 [localhost-startStop-1] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2018-03-17 16:42:20.933 [localhost-startStop-1] INFO  com.wy.moodindex.model.source.OAuthController - {"access_token":"9bbf91d9ce487259256b9decd43972e247b14b69","refresh_token":"9ac4584c7b159602c9a9c0cc2ca9c43ff36846b0","uid":1629212250,"is_new":false,"scope":"all","darkness":0,"expires_in":9692,"user":{"id":1629212250,"screen_name":null,"name":null,"province":null,"city":null,"location":null,"description":null,"url":null,"domain":null,"gender":null,"verified":null,"created_at":1519265700652,"areaCode":null,"type":"5","followers_count":null,"friends_count":null,"status_count":null,"last_status_id":null,"last_comment_id":null,"step":"null","verified_description":null,"blog_description":null,"profile":"/1629212250","recommend":null,"stock_status_count":null,"intro":null,"status":0,"st_color":"1","following":false,"follow_me":false,"blocking":false,"allow_all_stock":false,"truncated":false,"stocks_count":null,"verified_type":null,"ability":null,"donate_snowcoin":0,"donate_count":0,"anonymous":true,"maskedEmail":null,"photo_domain":"http://xavatar.imedao.com/","cube_count":null,"profile_image_url":"community/default/avatar.png,community/default/avatar.png!180x180.png,community/default/avatar.png!50x50.png,community/default/avatar.png!30x30.png"}}
+2018-03-17 17:04:26.428 [localhost-startStop-1] INFO  com.wy.moodindex.model.source.OAuthController - {"access_token":"9bbf91d9ce487259256b9decd43972e247b14b69","refresh_token":"9ac4584c7b159602c9a9c0cc2ca9c43ff36846b0","uid":1629212250,"is_new":false,"scope":"all","darkness":0,"expires_in":9670,"user":{"id":1629212250,"screen_name":null,"name":null,"province":null,"city":null,"location":null,"description":null,"url":null,"domain":null,"gender":null,"verified":null,"created_at":1519265700652,"areaCode":null,"type":"5","followers_count":null,"friends_count":null,"status_count":null,"last_status_id":null,"last_comment_id":null,"step":"null","verified_description":null,"blog_description":null,"profile":"/1629212250","recommend":null,"stock_status_count":null,"intro":null,"status":0,"st_color":"1","following":false,"follow_me":false,"blocking":false,"allow_all_stock":false,"truncated":false,"stocks_count":null,"verified_type":null,"ability":null,"donate_snowcoin":0,"donate_count":0,"anonymous":true,"maskedEmail":null,"cube_count":null,"profile_image_url":"community/default/avatar.png,community/default/avatar.png!180x180.png,community/default/avatar.png!50x50.png,community/default/avatar.png!30x30.png","photo_domain":"http://xavatar.imedao.com/"}}
+2018-03-17 17:04:26.563 [localhost-startStop-1] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2018-03-17 17:04:27.761 [localhost-startStop-1] INFO  com.wy.moodindex.model.source.OAuthController - {"access_token":"9bbf91d9ce487259256b9decd43972e247b14b69","refresh_token":"9ac4584c7b159602c9a9c0cc2ca9c43ff36846b0","uid":1629212250,"is_new":false,"scope":"all","darkness":0,"expires_in":9670,"user":{"id":1629212250,"screen_name":null,"name":null,"province":null,"city":null,"location":null,"description":null,"url":null,"domain":null,"gender":null,"verified":null,"created_at":1519265700652,"areaCode":null,"type":"5","followers_count":null,"friends_count":null,"status_count":null,"last_status_id":null,"last_comment_id":null,"step":"null","verified_description":null,"blog_description":null,"profile":"/1629212250","recommend":null,"stock_status_count":null,"intro":null,"status":0,"st_color":"1","following":false,"follow_me":false,"blocking":false,"allow_all_stock":false,"truncated":false,"stocks_count":null,"verified_type":null,"ability":null,"donate_snowcoin":0,"donate_count":0,"anonymous":true,"maskedEmail":null,"photo_domain":"http://xavatar.imedao.com/","profile_image_url":"community/default/avatar.png,community/default/avatar.png!180x180.png,community/default/avatar.png!50x50.png,community/default/avatar.png!30x30.png","cube_count":null}}
+2018-03-17 17:06:00.049 [localhost-startStop-1] INFO  com.wy.moodindex.model.source.OAuthController - {"access_token":"9bbf91d9ce487259256b9decd43972e247b14b69","refresh_token":"9ac4584c7b159602c9a9c0cc2ca9c43ff36846b0","uid":1629212250,"is_new":false,"scope":"all","darkness":0,"expires_in":9669,"user":{"id":1629212250,"screen_name":null,"name":null,"province":null,"city":null,"location":null,"description":null,"url":null,"domain":null,"gender":null,"verified":null,"created_at":1519265700652,"areaCode":null,"type":"5","followers_count":null,"friends_count":null,"status_count":null,"last_status_id":null,"last_comment_id":null,"step":"null","verified_description":null,"blog_description":null,"profile":"/1629212250","recommend":null,"stock_status_count":null,"intro":null,"status":0,"st_color":"1","following":false,"follow_me":false,"blocking":false,"allow_all_stock":false,"truncated":false,"stocks_count":null,"verified_type":null,"ability":null,"donate_snowcoin":0,"donate_count":0,"maskedEmail":null,"anonymous":true,"photo_domain":"http://xavatar.imedao.com/","cube_count":null,"profile_image_url":"community/default/avatar.png,community/default/avatar.png!180x180.png,community/default/avatar.png!50x50.png,community/default/avatar.png!30x30.png"}}
+2018-03-17 17:06:00.175 [localhost-startStop-1] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2018-03-17 17:06:01.446 [localhost-startStop-1] INFO  com.wy.moodindex.model.source.OAuthController - {"access_token":"9bbf91d9ce487259256b9decd43972e247b14b69","refresh_token":"9ac4584c7b159602c9a9c0cc2ca9c43ff36846b0","uid":1629212250,"is_new":false,"scope":"all","darkness":0,"expires_in":9668,"user":{"id":1629212250,"screen_name":null,"name":null,"province":null,"city":null,"location":null,"description":null,"url":null,"domain":null,"gender":null,"verified":null,"created_at":1519265700652,"areaCode":null,"type":"5","followers_count":null,"friends_count":null,"status_count":null,"last_status_id":null,"last_comment_id":null,"step":"null","verified_description":null,"blog_description":null,"profile":"/1629212250","recommend":null,"stock_status_count":null,"intro":null,"status":0,"st_color":"1","following":false,"follow_me":false,"blocking":false,"allow_all_stock":false,"truncated":false,"stocks_count":null,"verified_type":null,"ability":null,"donate_snowcoin":0,"donate_count":0,"maskedEmail":null,"anonymous":true,"photo_domain":"http://xavatar.imedao.com/","cube_count":null,"profile_image_url":"community/default/avatar.png,community/default/avatar.png!180x180.png,community/default/avatar.png!50x50.png,community/default/avatar.png!30x30.png"}}
+2018-03-17 17:12:29.409 [localhost-startStop-1] INFO  com.wy.moodindex.model.source.OAuthController - {"access_token":"9bbf91d9ce487259256b9decd43972e247b14b69","refresh_token":"9ac4584c7b159602c9a9c0cc2ca9c43ff36846b0","uid":1629212250,"is_new":false,"scope":"all","darkness":0,"expires_in":9662,"user":{"id":1629212250,"screen_name":null,"name":null,"province":null,"city":null,"location":null,"description":null,"url":null,"domain":null,"gender":null,"verified":null,"created_at":1519265700652,"areaCode":null,"type":"5","followers_count":null,"friends_count":null,"status_count":null,"last_status_id":null,"last_comment_id":null,"step":"null","verified_description":null,"blog_description":null,"profile":"/1629212250","recommend":null,"stock_status_count":null,"intro":null,"status":0,"st_color":"1","following":false,"follow_me":false,"blocking":false,"allow_all_stock":false,"truncated":false,"stocks_count":null,"verified_type":null,"ability":null,"donate_snowcoin":0,"donate_count":0,"anonymous":true,"maskedEmail":null,"photo_domain":"http://xavatar.imedao.com/","profile_image_url":"community/default/avatar.png,community/default/avatar.png!180x180.png,community/default/avatar.png!50x50.png,community/default/avatar.png!30x30.png","cube_count":null}}
+2018-03-17 17:12:29.544 [localhost-startStop-1] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2018-03-17 17:12:30.836 [localhost-startStop-1] INFO  com.wy.moodindex.model.source.OAuthController - {"access_token":"9bbf91d9ce487259256b9decd43972e247b14b69","refresh_token":"9ac4584c7b159602c9a9c0cc2ca9c43ff36846b0","uid":1629212250,"is_new":false,"scope":"all","darkness":0,"expires_in":9662,"user":{"id":1629212250,"screen_name":null,"name":null,"province":null,"city":null,"location":null,"description":null,"url":null,"domain":null,"gender":null,"verified":null,"created_at":1519265700652,"areaCode":null,"type":"5","followers_count":null,"friends_count":null,"status_count":null,"last_status_id":null,"last_comment_id":null,"step":"null","verified_description":null,"blog_description":null,"profile":"/1629212250","recommend":null,"stock_status_count":null,"intro":null,"status":0,"st_color":"1","following":false,"follow_me":false,"blocking":false,"allow_all_stock":false,"truncated":false,"stocks_count":null,"verified_type":null,"ability":null,"donate_snowcoin":0,"donate_count":0,"anonymous":true,"maskedEmail":null,"photo_domain":"http://xavatar.imedao.com/","profile_image_url":"community/default/avatar.png,community/default/avatar.png!180x180.png,community/default/avatar.png!50x50.png,community/default/avatar.png!30x30.png","cube_count":null}}
+2018-03-17 17:23:16.395 [localhost-startStop-1] INFO  com.wy.moodindex.model.source.OAuthController - {"access_token":"9bbf91d9ce487259256b9decd43972e247b14b69","refresh_token":"9ac4584c7b159602c9a9c0cc2ca9c43ff36846b0","uid":1629212250,"is_new":false,"scope":"all","darkness":0,"expires_in":9651,"user":{"id":1629212250,"screen_name":null,"name":null,"province":null,"city":null,"location":null,"description":null,"url":null,"domain":null,"gender":null,"verified":null,"created_at":1519265700652,"areaCode":null,"type":"5","followers_count":null,"friends_count":null,"status_count":null,"last_status_id":null,"last_comment_id":null,"step":"null","verified_description":null,"blog_description":null,"profile":"/1629212250","recommend":null,"stock_status_count":null,"intro":null,"status":0,"st_color":"1","following":false,"follow_me":false,"blocking":false,"allow_all_stock":false,"truncated":false,"stocks_count":null,"verified_type":null,"ability":null,"donate_snowcoin":0,"donate_count":0,"maskedEmail":null,"anonymous":true,"photo_domain":"http://xavatar.imedao.com/","cube_count":null,"profile_image_url":"community/default/avatar.png,community/default/avatar.png!180x180.png,community/default/avatar.png!50x50.png,community/default/avatar.png!30x30.png"}}
+2018-03-17 17:23:20.544 [localhost-startStop-1] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2018-03-17 17:23:24.862 [localhost-startStop-1] INFO  com.wy.moodindex.model.source.OAuthController - {"access_token":"9bbf91d9ce487259256b9decd43972e247b14b69","refresh_token":"9ac4584c7b159602c9a9c0cc2ca9c43ff36846b0","uid":1629212250,"is_new":false,"scope":"all","darkness":0,"expires_in":9651,"user":{"id":1629212250,"screen_name":null,"name":null,"province":null,"city":null,"location":null,"description":null,"url":null,"domain":null,"gender":null,"verified":null,"created_at":1519265700652,"areaCode":null,"type":"5","followers_count":null,"friends_count":null,"status_count":null,"last_status_id":null,"last_comment_id":null,"step":"null","verified_description":null,"blog_description":null,"profile":"/1629212250","recommend":null,"stock_status_count":null,"intro":null,"status":0,"st_color":"1","following":false,"follow_me":false,"blocking":false,"allow_all_stock":false,"truncated":false,"stocks_count":null,"verified_type":null,"ability":null,"donate_snowcoin":0,"donate_count":0,"anonymous":true,"maskedEmail":null,"cube_count":null,"profile_image_url":"community/default/avatar.png,community/default/avatar.png!180x180.png,community/default/avatar.png!50x50.png,community/default/avatar.png!30x30.png","photo_domain":"http://xavatar.imedao.com/"}}
+2018-03-17 17:24:42.068 [localhost-startStop-1] INFO  com.wy.moodindex.model.source.OAuthController - {"access_token":"9bbf91d9ce487259256b9decd43972e247b14b69","refresh_token":"9ac4584c7b159602c9a9c0cc2ca9c43ff36846b0","uid":1629212250,"is_new":false,"scope":"all","darkness":0,"expires_in":9650,"user":{"id":1629212250,"screen_name":null,"name":null,"province":null,"city":null,"location":null,"description":null,"url":null,"domain":null,"gender":null,"verified":null,"created_at":1519265700652,"areaCode":null,"type":"5","followers_count":null,"friends_count":null,"status_count":null,"last_status_id":null,"last_comment_id":null,"step":"null","verified_description":null,"blog_description":null,"profile":"/1629212250","recommend":null,"stock_status_count":null,"intro":null,"status":0,"st_color":"1","following":false,"follow_me":false,"blocking":false,"allow_all_stock":false,"truncated":false,"stocks_count":null,"verified_type":null,"ability":null,"donate_snowcoin":0,"donate_count":0,"anonymous":true,"maskedEmail":null,"photo_domain":"http://xavatar.imedao.com/","cube_count":null,"profile_image_url":"community/default/avatar.png,community/default/avatar.png!180x180.png,community/default/avatar.png!50x50.png,community/default/avatar.png!30x30.png"}}
+2018-03-17 17:24:42.193 [localhost-startStop-1] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2018-03-17 17:24:43.262 [localhost-startStop-1] INFO  com.wy.moodindex.model.source.OAuthController - {"access_token":"9bbf91d9ce487259256b9decd43972e247b14b69","refresh_token":"9ac4584c7b159602c9a9c0cc2ca9c43ff36846b0","uid":1629212250,"is_new":false,"scope":"all","darkness":0,"expires_in":9650,"user":{"id":1629212250,"screen_name":null,"name":null,"province":null,"city":null,"location":null,"description":null,"url":null,"domain":null,"gender":null,"verified":null,"created_at":1519265700652,"areaCode":null,"type":"5","followers_count":null,"friends_count":null,"status_count":null,"last_status_id":null,"last_comment_id":null,"step":"null","verified_description":null,"blog_description":null,"profile":"/1629212250","recommend":null,"stock_status_count":null,"intro":null,"status":0,"st_color":"1","following":false,"follow_me":false,"blocking":false,"allow_all_stock":false,"truncated":false,"stocks_count":null,"verified_type":null,"ability":null,"donate_snowcoin":0,"donate_count":0,"anonymous":true,"maskedEmail":null,"profile_image_url":"community/default/avatar.png,community/default/avatar.png!180x180.png,community/default/avatar.png!50x50.png,community/default/avatar.png!30x30.png","cube_count":null,"photo_domain":"http://xavatar.imedao.com/"}}
+2018-03-17 17:26:01.489 [localhost-startStop-1] INFO  com.wy.moodindex.model.source.OAuthController - {"access_token":"9bbf91d9ce487259256b9decd43972e247b14b69","refresh_token":"9ac4584c7b159602c9a9c0cc2ca9c43ff36846b0","uid":1629212250,"is_new":false,"scope":"all","darkness":0,"expires_in":9648,"user":{"id":1629212250,"screen_name":null,"name":null,"province":null,"city":null,"location":null,"description":null,"url":null,"domain":null,"gender":null,"verified":null,"created_at":1519265700652,"areaCode":null,"type":"5","followers_count":null,"friends_count":null,"status_count":null,"last_status_id":null,"last_comment_id":null,"step":"null","verified_description":null,"blog_description":null,"profile":"/1629212250","recommend":null,"stock_status_count":null,"intro":null,"status":0,"st_color":"1","following":false,"follow_me":false,"blocking":false,"allow_all_stock":false,"truncated":false,"stocks_count":null,"verified_type":null,"ability":null,"donate_snowcoin":0,"donate_count":0,"anonymous":true,"maskedEmail":null,"cube_count":null,"profile_image_url":"community/default/avatar.png,community/default/avatar.png!180x180.png,community/default/avatar.png!50x50.png,community/default/avatar.png!30x30.png","photo_domain":"http://xavatar.imedao.com/"}}
+2018-03-17 17:26:01.625 [localhost-startStop-1] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
