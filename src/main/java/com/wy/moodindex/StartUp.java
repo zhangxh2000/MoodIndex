@@ -15,7 +15,11 @@ public class StartUp implements ApplicationListener<ContextRefreshedEvent> {
 
     public void onApplicationEvent(ContextRefreshedEvent event) {
         if (event.getApplicationContext().getId().contains("mood-index")) {
-            dataEngine.start();
+            new Thread(new Runnable() {
+                public void run() {
+                    dataEngine.genarateHistoryData();
+                }
+            }).start();
         }
     }
 

@@ -41,7 +41,7 @@
     </bean>
 
     <!--执行初始化任务的bean-->
-    <bean class="com.wy.moodindex.model.DataEngine">
+    <bean class="com.wy.moodindex.model.DataEngine" init-method = "init" destroy-method = "destroy">
     </bean>
     <bean class ="com.wy.moodindex.StartUp">
     </bean>
