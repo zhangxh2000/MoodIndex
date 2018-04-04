@@ -87,4 +87,13 @@ public class Stock {
     public void setName(String name) {
         this.name = name == null ? null : name.trim();
     }
+
+    private long lastPostCreatedTime;
+    public long getLastPostCreatedTime() {
+        return lastPostCreatedTime;
+    }
+
+    public void setLastPostCreatedTime(long time) {
+        this.lastPostCreatedTime = time;
+    }
 }
