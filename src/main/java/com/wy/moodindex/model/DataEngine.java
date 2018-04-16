@@ -2,6 +2,9 @@ package com.wy.moodindex.model;
 
 import com.wy.moodindex.dao.StockMapper;
 import com.wy.moodindex.model.Bean.AuthResult;
+import com.wy.moodindex.model.process.CountParserResult;
+import com.wy.moodindex.model.process.Parser;
+import com.wy.moodindex.model.process.ParserContext;
 import com.wy.moodindex.model.process.PostParser;
 import com.wy.moodindex.model.source.PostGrabber;
 import com.wy.moodindex.model.source.IGrab;
@@ -11,9 +14,9 @@ import org.apache.commons.lang.time.DateUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 import java.util.Random;
 
 /**
@@ -38,54 +41,46 @@ public class DataEngine {
 
     }
 
-    public class ParserContext {
-        public long createdTime;
-        public boolean isEverReached;
-    }
-
     public void start() {
         if (authResult == null) {
             return;
         }
-        Date thisDay = new Date();
+        //选日期，生成context
+        Calendar calendar = Calendar.getInstance();
+
+        ParserContext context = new ParserContext(calendar);
         //选一只
         Stock stock = nextStock();
-        int pageIndex = 0;
-        //取一页数据
-        IGrab grabController = new PostGrabber(authResult);
-        PostParser postParser = new PostParser();
-        PostParser.ParserResult result = null;
-        int count = 0;
-        ParserContext context = new ParserContext();
-        context.isEverReached = false;
-        try {
+        while (true) {
             do {
-                String content = grabController.grabData(stock.getId(), pageIndex);
-                if (result!=null&& result.newerCreatedTime!=0) {
-                    context.createdTime = result.newerCreatedTime;
-                } else {
-                    context.createdTime = 0;
-                }
-                result = postParser.processFromDate(content,context);
-                pageIndex++;
-                count += result.count;
-                try {
-                    Random random = new Random(16000);
-                    Thread.sleep(500 + random.nextInt(2000));
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            } while (!result.thisDayFinished);
-        }catch (RuntimeException e) {
-            LOGGER.warn("genarateHistoryData exception " + e);
+                int pageIndex = 1;
+                //取一页数据
+                IGrab grabController = new PostGrabber(authResult);
+                Parser postParser = new Parser();
+                do {
+                    String content = grabController.grabData(stock.getStockId(), pageIndex);
+                    postParser.parserPageContent(content, context);
+                    pageIndex++;
+                    try {
+                        //sleep because the website may forbidden periodic request
+                        Random random = new Random();
+                        Thread.sleep(800 + random.nextInt(2000));
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                } while (!context.isHit());
+                LOGGER.info(stock.getStockName() + " count current " + context.getCount() + " on " + context.getDate());
+            } while (!context.isFinished());
+            LOGGER.info(stock.getStockName() + " count final " + context.getCount() + " on " + context.getDate());
+            calendar.add(Calendar.DATE, 1);// 日期+1
+            context = new ParserContext(calendar);
         }
-
-
-        LOGGER.info(stock.getName() + " count is " + count + " on ");
     }
 
     private Stock nextStock() {
-        return stockMapper.selectByPrimaryKey("SH600606");
+        //return stockMapper.selectByStockID("SH600016");//民生银行
+        //return stockMapper.selectByStockID("SZ002069");
+        return stockMapper.selectByStockID("SH600875");
     }
 
 
@@ -98,7 +93,7 @@ public class DataEngine {
         int pageIndex = 0;
         PostParser.ParserResult result;
         Date date = new Date();
-        Stock stock = stockMapper.selectByPrimaryKey("SH000001");
+        Stock stock = stockMapper.selectByStockID("SH000001");
         PostParser postParser = new PostParser();
         for (int i = 0; i < 100; i++) {
             int count = 0;
@@ -110,7 +105,7 @@ public class DataEngine {
             }
             try {
                 do {
-                    String temp = grabController.grabData(stock.getId(), pageIndex);
+                    String temp = grabController.grabData(stock.getStockId(), pageIndex);
                     result = postParser.process(temp);
                     pageIndex++;
                     count += result.count;
@@ -125,7 +120,7 @@ public class DataEngine {
                 LOGGER.warn("genarateHistoryData exception " + e);
                 break;
             }
-            LOGGER.info(stock.getName() + " count is " + count + " on " + date);
+            LOGGER.info(stock.getStockName() + " count is " + count + " on " + date);
         }
 
     }

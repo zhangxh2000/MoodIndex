@@ -27,6 +27,9 @@
                 Ibatis2Java5
     -->
     <context id="context" defaultModelType="conditional" targetRuntime="MyBatis3">
+        <!-- 生成的Java文件的编码 -->
+        <property name="javaFileEncoding" value="UTF-8"/>
+
         <!--旨在创建class时，对注释进行控制-->
         <commentGenerator>
             <!--suppressAllComments  false时打开注释，true时关闭注释-->
@@ -38,7 +41,7 @@
         <!--jdbc的数据库连接 -->
         <jdbcConnection driverClass="${jdbc.driverClass}"
                         connectionURL="${jdbc.url}"
-                        userId="${jdbc.username}"
+                        userId="${jdbc.user}"
                         password="${jdbc.password}"/>
         <!--java类型处理器
             用于处理DB中的类型到Java中的类型，默认使用JavaTypeResolverDefaultImpl；
@@ -117,7 +120,7 @@
             modelType：参考context元素的defaultModelType，相当于覆盖；
         -->
         <!-- 要生成的表: tableName是数据库中的表名或视图名 domainObjectName是实体类名-->
-        <table tableName="stock" domainObjectName="Stock" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+        <table tableName="stock" domainObjectName="Stock" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="true">
         </table>
         <table tableName="post_daily"
         />
