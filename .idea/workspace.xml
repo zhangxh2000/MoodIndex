@@ -1,20 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="33dd591e-0a72-4379-905f-fe8b112730b9" name="Default" comment="commit">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/wy/moodindex/model/process/CountParserResult.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/wy/moodindex/model/process/Parser.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/wy/moodindex/model/process/ParserContext.java" />
+    <list default="true" id="33dd591e-0a72-4379-905f-fe8b112730b9" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/logs/drone_server.log" afterPath="$PROJECT_DIR$/logs/drone_server.log" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wy/moodindex/dao/StockMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/wy/moodindex/dao/StockMapper.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wy/moodindex/model/DataEngine.java" afterPath="$PROJECT_DIR$/src/main/java/com/wy/moodindex/model/DataEngine.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wy/moodindex/model/process/PostParser.java" afterPath="$PROJECT_DIR$/src/main/java/com/wy/moodindex/model/process/PostParser.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/wy/moodindex/pojo/Stock.java" afterPath="$PROJECT_DIR$/src/main/java/com/wy/moodindex/pojo/Stock.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" afterPath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/com/wy/moodindex/dao/StockMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapper/com/wy/moodindex/dao/StockMapper.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/resource/db.properties" afterPath="$PROJECT_DIR$/src/main/resources/resource/db.properties" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/spring/applicationContext-dao.xml" afterPath="$PROJECT_DIR$/src/main/resources/spring/applicationContext-dao.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -529,7 +517,14 @@
       <option name="project" value="LOCAL" />
       <updated>1521279176624</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="commit">
+      <created>1523872379967</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1523872379967</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
