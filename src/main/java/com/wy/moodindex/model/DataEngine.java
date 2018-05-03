@@ -14,10 +14,8 @@ import org.apache.commons.lang.time.DateUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
-import java.util.Random;
+
+import java.util.*;
 
 /**
  * 从雪球抓取数据、提取数据、保存数据到数据库
@@ -45,8 +43,9 @@ public class DataEngine {
         if (authResult == null) {
             return;
         }
+        TimeZone.setDefault(TimeZone.getTimeZone("Asia/Shanghai"));
         //选日期，生成context
-        Calendar calendar = Calendar.getInstance();
+        Calendar calendar = Calendar.getInstance(TimeZone.getDefault());
 
         ParserContext context = new ParserContext(calendar);
         //选一只
@@ -64,7 +63,7 @@ public class DataEngine {
                     try {
                         //sleep because the website may forbidden periodic request
                         Random random = new Random();
-                        Thread.sleep(800 + random.nextInt(2000));
+                        Thread.sleep(10000 + random.nextInt(2000));
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
