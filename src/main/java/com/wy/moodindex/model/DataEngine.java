@@ -68,9 +68,9 @@ public class DataEngine {
                         e.printStackTrace();
                     }
                 } while (!context.isHit());
-                LOGGER.info(stock.getStockName() + " count current " + context.getCount() + " on " + context.getDate());
+                LOGGER.info(stock.getStockName() + " count current " + context.getCount() + " on " + context.getCalendar().getTime());
             } while (!context.isFinished());
-            LOGGER.info(stock.getStockName() + " count final " + context.getCount() + " on " + context.getDate());
+            LOGGER.info(stock.getStockName() + " count final " + context.getCount() + " on " + context.getCalendar().getTime());
             calendar.add(Calendar.DATE, 1);// 日期+1
             context = new ParserContext(calendar);
         }

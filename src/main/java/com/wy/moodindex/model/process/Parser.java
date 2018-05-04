@@ -5,9 +5,7 @@ import com.alibaba.fastjson.JSONObject;
 import org.apache.commons.lang.time.DateUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
 import java.util.Calendar;
-import java.util.Date;
 
 public class Parser {
     private static Logger LOGGER = LogManager.getLogger();
@@ -22,14 +20,14 @@ public class Parser {
         for (int i = 0; i < postList.size(); i++) {
             JSONObject post = postList.getJSONObject(i);
             long time = post.getLongValue("created_at");
-            Date postDate = new Date(time);
-            if (!DateUtils.isSameDay(postDate, context.getDate())) {
+            Calendar postCalendar = (Calendar) context.getCalendar().clone();
+            postCalendar.setTimeInMillis(time);
+            if (!DateUtils.isSameDay(postCalendar, context.getCalendar())) {
                 //不是同一天
-                if (postDate.getTime()> context.getDate().getTime()) {
+                if (postCalendar.getTimeInMillis()> context.getCalendar().getTimeInMillis()) {
                     //post取到新的一天了，如果hit过，则认为任务结束
                     if (context.isHit()) {
                         context.setFinished();
-                        break;
                     }
                     continue;
                 } else {

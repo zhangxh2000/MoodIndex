@@ -64,8 +64,8 @@ public class ParserContext {
         return smallTime;
     }
 
-    public Date getDate() {
-        return targetDate.getTime();
+    public Calendar getCalendar() {
+        return targetDate;
     }
 
     public void hit() {
