@@ -63,12 +63,18 @@ public class DataEngine {
                     try {
                         //sleep because the website may forbidden periodic request
                         Random random = new Random();
-                        Thread.sleep(10000 + random.nextInt(2000));
+                        Thread.sleep(5000 + random.nextInt(8000));
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
                 } while (!context.isHit());
                 LOGGER.info(stock.getStockName() + " count current " + context.getCount() + " on " + context.getCalendar().getTime());
+                if (!DateUtils.isSameDay(context.getCalendar(),Calendar.getInstance(TimeZone.getDefault()))) {
+                    //日期不一样，说明己经进入新的一天，break，（如果是取历史某一天的数据，则此处逻辑有误，暂不考虑取历史数据）
+                    LOGGER.info(stock.getStockName() + "break to new day");
+                    context.setFinished();
+                    break;
+                }
             } while (!context.isFinished());
             LOGGER.info(stock.getStockName() + " count final " + context.getCount() + " on " + context.getCalendar().getTime());
             calendar.add(Calendar.DATE, 1);// 日期+1

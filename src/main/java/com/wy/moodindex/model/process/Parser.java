@@ -33,6 +33,7 @@ public class Parser {
                 } else {
                     //己经取到前一天了，当天肯定取到过（有可能count为0）
                     //TODO 如果是取历史某一天的数据，而这一天又没有数据，则需要在此处设置finished
+                    //暂不考虑取历史数据
                     context.hit();
                     break;
                 }
