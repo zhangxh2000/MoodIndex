@@ -1,5 +1,6 @@
 package com.wy.moodindex.model;
 
+import com.wy.moodindex.dao.PostDailyMapper;
 import com.wy.moodindex.dao.StockMapper;
 import com.wy.moodindex.model.Bean.AuthResult;
 import com.wy.moodindex.model.process.CountParserResult;
@@ -9,6 +10,7 @@ import com.wy.moodindex.model.process.PostParser;
 import com.wy.moodindex.model.source.PostGrabber;
 import com.wy.moodindex.model.source.IGrab;
 import com.wy.moodindex.model.source.OAuthController;
+import com.wy.moodindex.pojo.PostDaily;
 import com.wy.moodindex.pojo.Stock;
 import org.apache.commons.lang.time.DateUtils;
 import org.apache.logging.log4j.LogManager;
@@ -26,6 +28,8 @@ public class DataEngine {
     private AuthResult authResult;
     @Autowired
     private StockMapper stockMapper;
+    @Autowired
+    private PostDailyMapper postDailyMapper;
 
     public void init() {
         OAuthController oAuthController = new OAuthController();
@@ -77,6 +81,11 @@ public class DataEngine {
                 }
             } while (!context.isFinished());
             LOGGER.info(stock.getStockName() + " count final " + context.getCount() + " on " + context.getCalendar().getTime());
+            PostDaily postDaily = new PostDaily();
+            postDaily.setCount(context.getCount());
+            postDaily.setDate(context.getCalendar().getTime());
+            postDaily.setStockId(stock.getStockId());
+            postDailyMapper.insert(postDaily);
             calendar.add(Calendar.DATE, 1);// 日期+1
             context = new ParserContext(calendar);
         }
